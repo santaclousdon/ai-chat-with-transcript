@@ -1,14 +1,29 @@
 # Blueprint AI Work Simulation Exercise
 
-This repository contains a full-stack application scaffold for a work simulation exercise. The goal is to evaluate your ability to work with AI technologies and build a simple question-answering agent.
+This repository contains a full-stack application for an AI-powered question-answering system that analyzes a therapy session transcript. The system allows users to ask questions about the conversation and receive AI-generated responses with relevant context and quotes.
+
+## Demo
+
+![Application Screenshot](./assets/screenshot.png)
+
+[Watch Demo Video](./assets/product.mp4)
 
 ## Project Overview
 
 The project consists of:
-- A React frontend (`client`)
-- A NestJS backend (`api`)
+- A React frontend (`client`) - [View Client README](./client/README.md)
+- A NestJS backend (`api`) - [View API README](./api/README.md)
 - A PostgreSQL database
-- A sample transcript for the AI agent to analyze
+- A therapy session transcript for the AI agent to analyze
+
+## Key Features
+
+- AI-powered question answering about the transcript content
+- Real-time response generation with relevant quotes
+- Modern React frontend with TypeScript and Vite
+- RESTful API with NestJS
+- PostgreSQL database for data persistence
+- Docker containerization for easy deployment
 
 ## Getting Started
 
@@ -21,11 +36,30 @@ The project consists of:
    ```bash
    docker compose run api npm run migration:up
    ```
-4. Visit [localhost:5173](http://localhost:5173) to verify the application is running
+4. Visit [localhost:5173](http://localhost:5173) to access the application
+
+## Project Structure
+
+- `/api` - Backend NestJS application with AI integration
+- `/client` - Frontend React application with TypeScript
+- `/api/data` - Contains the therapy session transcript
+- `docker-compose.yml` - Docker configuration for all services
+
+## Available Scripts
+
+In the API directory:
+- `npm run dev` - Start the development server
+- `npm run migration:up` - Run database migrations
+- `npm run test` - Run tests
+
+In the Client directory:
+- `npm run dev` - Start the development server
+- `npm run build` - Build for production
+- `npm run test` - Run tests
 
 ## The Challenge
 
-Your task is to create a simple AI agent that can answer questions about the contents of a provided transcript. The transcript will be available in the `api/data/transcript.txt` file.
+Your task is to create an AI agent that can answer questions about the contents of a provided therapy session transcript. The transcript is available in the `api/data/transcript.txt` file.
 
 ### Requirements
 
@@ -51,25 +85,6 @@ Your solution will be evaluated on:
 ### Time Expectations
 
 Plan to spend about 4 hours to complete this exercise. Focus on delivering a working solution that demonstrates your understanding of AI concepts and software engineering principles.
-
-## Project Structure
-
-- `/api` - Backend Node.js application
-- `/client` - Frontend React application
-- `/api/data` - Contains the transcript file
-- `docker-compose.yml` - Docker configuration for all services
-
-## Available Scripts
-
-In the API directory:
-- `npm run dev` - Start the development server
-- `npm run migration:up` - Run database migrations
-- `npm run test` - Run tests
-
-In the Client directory:
-- `npm run dev` - Start the development server
-- `npm run build` - Build for production
-- `npm run test` - Run tests
 
 ## Submission
 

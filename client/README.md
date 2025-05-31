@@ -1,28 +1,83 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a modern React application built with TypeScript and Vite, featuring a robust development environment with HMR (Hot Module Replacement) and comprehensive ESLint rules.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Framework**: React 19 with TypeScript
+- **Build Tool**: Vite 6
+- **Styling**: 
+  - TailwindCSS
+  - Chakra UI
+  - Emotion
+- **Icons**: 
+  - Lucide React
+  - React Icons
+- **Theme Support**: next-themes
+- **Development Tools**:
+  - ESLint with TypeScript support
+  - PostCSS
+  - TypeScript 5.8
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```
+client/
+├── src/
+│   ├── assets/        # Static assets
+│   ├── components/    # React components
+│   ├── data/         # Data files
+│   ├── types/        # TypeScript type definitions
+│   ├── App.tsx       # Main application component
+│   ├── main.tsx      # Application entry point
+│   └── index.css     # Global styles
+├── public/           # Public static files
+├── vite.config.ts    # Vite configuration
+├── tsconfig.json     # TypeScript configuration
+└── tailwind.config.js # Tailwind CSS configuration
+```
+
+## Getting Started
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Build for production:
+   ```bash
+   npm run build
+   ```
+
+4. Preview production build:
+   ```bash
+   npm run preview
+   ```
+
+## Available Scripts
+
+- `npm run dev` - Start development server with HMR
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
+
+## ESLint Configuration
+
+The project uses a comprehensive ESLint setup with TypeScript support. Here's the recommended configuration:
 
 ```js
 export default tseslint.config({
   extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
     ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
     ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
     ...tseslint.configs.stylisticTypeChecked,
   ],
   languageOptions: {
-    // other options...
     parserOptions: {
       project: ['./tsconfig.node.json', './tsconfig.app.json'],
       tsconfigRootDir: import.meta.dirname,
@@ -31,7 +86,7 @@ export default tseslint.config({
 })
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+For React-specific linting, you can add:
 
 ```js
 // eslint.config.js
@@ -40,15 +95,25 @@ import reactDom from 'eslint-plugin-react-dom'
 
 export default tseslint.config({
   plugins: {
-    // Add the react-x and react-dom plugins
     'react-x': reactX,
     'react-dom': reactDom,
   },
   rules: {
-    // other rules...
-    // Enable its recommended typescript rules
     ...reactX.configs['recommended-typescript'].rules,
     ...reactDom.configs.recommended.rules,
   },
 })
 ```
+
+## Development
+
+The project uses Vite for fast development with features like:
+- Hot Module Replacement (HMR)
+- TypeScript support
+- PostCSS processing
+- TailwindCSS integration
+- Path aliases (configured in vite.config.ts)
+
+## Docker Support
+
+A development Dockerfile is included (`Dockerfile.dev`) for containerized development.

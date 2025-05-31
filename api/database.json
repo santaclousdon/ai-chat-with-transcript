@@ -2,9 +2,9 @@
   "dev": {
     "driver": "pg",
     "user": "postgres",
-    "password": "postgres",
-    "host": "db",
-    "database": "appdb",
+    "password": "password",
+    "host": "localhost",
+    "database": "blueprintdb",
     "port": 5432
   },
   "sql-file": true

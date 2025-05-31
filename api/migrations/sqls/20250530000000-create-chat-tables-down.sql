@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS messages;
+DROP TABLE IF EXISTS chat_sessions;
+DROP TABLE IF EXISTS transcripts;
+DROP TABLE IF EXISTS users; 
